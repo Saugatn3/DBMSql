@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text Input and Submit Button</title>
+  <script src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class = addtext>ADD STUDENT DATA</div>
+  <form onsubmit="fSubmit(event)">
+    <label for="idInputField">ID:</label>
+    <input type="text" id="iinputField" name="idInputField" placeholder="Enter student ID">
+    <br>
+    <label for="textInputField">Text Input:</label>
+    <input type="text" id="tinputField" name="textInputField" placeholder="Enter text">
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+  <button class = "viewbutton" onclick="viewData()">View Data</button>
+  
+  <table id="data-table" class="hidden">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</body>
+</html>
+
+
+
+
+
+
