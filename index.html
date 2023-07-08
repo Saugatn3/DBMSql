@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Text Input and Submit Button</title>
+  <title>DATABASE</title>
   <script src="script.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div class = addtext>ADD STUDENT DATA</div>
+  <div class = "addtext">ADD STUDENT DATA</div>
   <form onsubmit="fSubmit(event)">
     <label for="idInputField">ID:</label>
     <input type="text" id="iinputField" name="idInputField" placeholder="Enter student ID">
     <br>
-    <label for="textInputField">Text Input:</label>
+    <label for="textInputField">Name:</label>
     <input type="text" id="tinputField" name="textInputField" placeholder="Enter text">
     <br>
     <button type="submit">Submit</button>
@@ -23,6 +23,7 @@
       <tr>
         <th>ID</th>
         <th>Name</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>

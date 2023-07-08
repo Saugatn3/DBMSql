@@ -1,10 +1,12 @@
 const express = require('express');
 const path = require('path');
 const pg = require('pg');
-const config = require('./config')
+const config = require('./config.js')
+const port = 3001;
 
 const cors = require("cors");
 const app = express();
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -18,8 +20,8 @@ client.connect(function (err) {
 });
 
 // Start the Express.js server
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
 
 app.get('/', (req, res) => {
@@ -41,12 +43,13 @@ app.get('/submit', (req, res) => {
       console.error('error running query', err);
       return res.status(500).json({ error: 'An error occurred while adding data to the database' });
     }
+    res.status(200).json({ message: 'Data Added' });
     console.log(`added ${studentName}`)
   });
 });
 
 app.get('/view', (req, res) => {
-  const selectQuery = `SELECT * FROM tbl_Input`;
+  const selectQuery = `SELECT * FROM tbl_Input ORDER BY id ASC`;
   client.query(selectQuery, function (err, result) {
     if (err) {
       console.error('error running query', err);
@@ -56,5 +59,38 @@ app.get('/view', (req, res) => {
     res.send(result.rows);
   });
 });
+
+app.get('/delete', (req, res) => {
+  const selectQuery = `SELECT * FROM tbl_Input where id = ${req.query.id}`;
+  const deleteQuery = `DELETE FROM tbl_Input WHERE id = ${req.query.id}`
+  client.query(selectQuery, function (err, result) {
+    if (err) {
+      console.error('error running query', err);
+      return res.status(500).json({ error: 'An error occurred ' });
+    }
+    client.query(deleteQuery,function (err, result) {
+      if (err) {
+        console.error('error running query', err);
+        return res.status(500).json({ error: 'An error occurred while deleting the data' });
+      }
+      console.log('Deleted record');
+      res.status(200).json({ message: 'Deletion successful' });
+    });
+  });
+});
+
+app.get('/delete', (req, res) => {
+  const selectQuery = `SELECT * FROM tbl_Input where id = ${req.query.id}`;
+
+    client.query(deleteQuery,function (err, result) {
+      if (err) {
+        console.error('error running query', err);
+        return res.status(500).json({ error: 'An error occurred while deleting the data' });
+      }
+      console.log('Deleted record');
+      res.status(200).json({ message: 'Deletion successful' });
+    });
+  });
+
 app.use(cors());
-app.use(express.static(__dirname));
+app.use(express.static(__dirname))
