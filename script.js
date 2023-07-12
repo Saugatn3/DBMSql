@@ -60,7 +60,7 @@ function viewData(event) {
 
 function createDeleteButton(id) {
   const button = document.createElement('button');
-  button.classList.add('hidden');
+  //button.classList.add('hidden');
   button.textContent = 'Delete';
   button.addEventListener('click', function () {
     deleteData(id);
@@ -71,7 +71,7 @@ function createDeleteButton(id) {
 function createEditButton(row) {
   const button = document.createElement('button');
   button.textContent = 'Edit';
-  button.classList.add('hidden');
+  //button.classList.add('hidden');
   button.addEventListener('click', function () {
     editData(row);
   });
