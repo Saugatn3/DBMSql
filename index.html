@@ -6,25 +6,9 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <br>
-  <div class = "addtext">ADD STUDENT DATA</div>
-  <form id="main-form" onsubmit="fSubmit(event)">
-    <label for="idInputField">ID:</label>
-    <input type="text" id="iinputField" name="idInputField" placeholder="Enter student ID">
-    <br>
-    <label for="textInputField">Name:</label>
-    <input type="text" id="tinputField" name="textInputField" placeholder="Enter name">
-    <br>
-    <label for="addressInputField">Address:</label>
-    <input type="text" id="ainputField" name="addressInputField" placeholder="Enter address">
-    <br>
-    <label for="addressInputField">DOB:</label>
-    <input type="date" id="dinputField" name="dobInputField"  placeholder="DOB" max="2005-01-01">
-    <br>
-    <button type="submit">Submit</button>
-  </form>
   <form id="edit-form" class="hidden">
-    <input type="hidden" id="edit-id-input">
+    <label for="edit-id-input">ID:</label>
+    <input type="text" id="edit-id-input" readonly>
     <label for="edit-name-input">Name:</label>
     <input type="text" id="edit-name-input">
     <label for="edit-address-input">Address:</label>
@@ -34,11 +18,11 @@
     <br>
     <button type="submit" onclick="saveData()">Save</button>
   </form>
-  <button class = "viewbutton" id = "viewbutton" onclick="viewData()">View Data</button>
-  <button class="viewbutton hidden"  id = "hidebutton" onclick="toggleData()">Hide Data</button>
 
-  
-  <table id="data-table" class="hidden">
+  <br>
+  <button type="submit" onclick="getlogin(event)">Login</button>
+  <button type="submit" onclick="getsignup(event)">Signup</button>
+  <table id="data-table">
     <thead>
       <tr>
         <th>ID</th>

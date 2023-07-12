@@ -1,14 +1,21 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(208, 203, 198);
   font-family: Arial, sans-serif;
 }
 
 form {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   max-width: 300px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #262222;
   border-radius: 4px;
 }
 
@@ -16,7 +23,7 @@ label {
   margin-bottom: 10px;
 }
 
-input[type="text"],input[type="date"] {
+input[type="text"],input[type="date"],input[type="password"] {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -48,7 +55,15 @@ button:hover {
 }
 
 .addtext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+}
+
+a {
+  text-decoration: none;
 }
 
 .viewbutton {

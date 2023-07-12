@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <script src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <div class="addtext">
+    <h3>Login Form</h3>
+    <form onsubmit="floginSubmit(event)" method="POST" >
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required class="input-field">
+        <label for="username">Password:</label>
+        <input type="password" id="password" name="password" required class="input-field">
+        <br>
+        <button type="submit" class="viewbutton">Login</button>
+
+    </form>
+    <p>Don't have an account? <a class='viewbutton' href="/signup">Sign up</a></p>
+  </div>
+
+</body>
+</html>

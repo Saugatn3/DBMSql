@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup</title>
+  <script src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class = "addtext">Signup
+    <form id="main-form" onsubmit="fSignupSubmit(event)">
+      <label for="idInputField">ID:</label>
+      <input type="text" id="iinputField" name="idInputField" placeholder="Enter student ID">
+      <br>
+      <label for="textInputField">Name:</label>
+      <input type="text" id="tinputField" name="textInputField" placeholder="Enter name">
+      <br>
+      <label for="username">Password:</label>
+      <input type="password" id="password" name="passwordInputField" placeholder="Enter password" required >
+      <br>
+      <label for="addressInputField">Address:</label>
+      <input type="text" id="ainputField" name="addressInputField" placeholder="Enter address">
+      <br>
+      <label for="addressInputField">DOB:</label>
+      <input type="date" id="dinputField" name="dobInputField" max="2005-01-01">
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+    <p>Already have an account? <a class='viewbutton' href="/login">Log in</a></p>
+  </div>
+</body>
+</html>
